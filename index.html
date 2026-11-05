@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#142b3b">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>OrientDig spreadsheet – svensk guide till fynd, storlekar och QC</title>
+  <meta name="description" content="En svensk guide till OrientDig spreadsheet. Utforska kategorier, jämför storlekar, läs QC-bilder och planera dina köp med praktiska checklistor.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:title" content="OrientDig spreadsheet – välj med bättre underlag">
+  <meta property="og:description" content="Kategorier, köpguider och tydliga svar om produktlänkar, passform och QC-bilder. En oberoende guide på svenska.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OrientDig spreadsheet – svensk köpguide">
+  <meta name="twitter:description" content="Börja med rätt kategori. Jämför sedan mått, produktbilder och kostnadsunderlag.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <!--
+    index.html
+    Redaktionell research: sökning efter OrientDig spreadsheet och granskning av
+    tio relevanta webbplatser. Googles resultatsida kunde inte hämtas; placeringar
+    på Googles första sida har därför inte verifierats.
+    Researchunderlag: orientdigglobal.com, orientdigimport.com, orientdigindex.com,
+    one-to-oneyupoo.com, orientdigs.com, orientdigtable.com, orientdigi.com,
+    orientdig.net, orientdigsheets.org, spreadsheet-orientdig.com.
+    Orientdigs.com granskades via sökresultatets innehåll eftersom direkt hämtning misslyckades.
+    Teman: kategorier, produktlänkar, mått, QC-foton och fraktunderlag.
+    Sekundära sökteman: OrientDig-fynd, OrientDig QC-bilder,
+    storleksguide för sneakers, guide till produktlänkar.
+    Ingen publiceringsadress är angiven. Lägg till en självrefererande canonical
+    först när sidans verkliga adress är känd.
+  -->
+
+  <style>
+    :root {
+      --ink: #142b3b;
+      --muted: #52606a;
+      --paper: #f7f5ee;
+      --white: #fff;
+      --line: #d8ddd9;
+      --yellow: #f4d35e;
+      --soft: #e8eeeb;
+      --radius: 18px;
+      --width: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #916900;
+      outline-offset: 5px;
+    }
+    img { display: block; width: 100%; height: auto; }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1, h2, h3 { line-height: 1.14; letter-spacing: -.035em; }
+    h1 { font-size: clamp(2.5rem, 5.5vw, 4.8rem); max-width: 14ch; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-size: 1.28rem; }
+    p + p { margin-top: 1rem; }
+    .wrap { width: min(var(--width), calc(100% - 40px)); margin-inline: auto; }
+    .topbar { background: var(--ink); color: var(--white); }
+    .topbar-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      font-weight: 850;
+      letter-spacing: -.025em;
+      font-size: 1.3rem;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--yellow);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      font-size: 1rem;
+    }
+    .topbar small { color: #d8e2e8; }
+    .eyebrow {
+      display: block;
+      margin-bottom: 12px;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .category-section { padding: 25px 0 30px; border-bottom: 1px solid var(--line); }
+    .category-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .category-heading h2 { font-size: 1rem; letter-spacing: 0; }
+    .category-heading span { color: var(--muted); font-size: .8rem; }
+    .categories { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+    .categories a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 53px;
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      font-size: .86rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .categories a::after { content: "↗"; color: var(--muted); flex-shrink: 0; }
+    .categories a:hover { background: var(--yellow); border-color: var(--ink); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 50px;
+      padding-block: 55px;
+      align-items: center;
+    }
+    .hero .intro { max-width: 54ch; margin-top: 24px; font-size: 1.08rem; color: var(--muted); }
+    .hero h1 span { display: block; margin-top: 16px; font-size: .57em; font-weight: 550; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 13px 20px;
+      min-height: 48px;
+      border-radius: 7px;
+      background: var(--ink);
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 750;
+    }
+    .hero .button { margin-top: 26px; }
+    .hero-note { margin-top: 14px; color: var(--muted); font-size: .8rem; }
+    .hero figure { position: relative; }
+    .hero img { aspect-ratio: 5 / 4; object-fit: cover; border-radius: var(--radius); background: #cf282f; }
+    figcaption { margin-top: 10px; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    .image-label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 6px 11px;
+      border-radius: 30px;
+      background: var(--paper);
+      font-size: .72rem;
+      font-weight: 750;
+    }
+    .answer {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 30px;
+      padding: 30px;
+      background: var(--yellow);
+      border-radius: var(--radius);
+    }
+    .answer h2 { font-size: 1.4rem; }
+    .answer p { max-width: 83ch; }
+    .section { padding-block: 60px; }
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+    .section-head p { color: var(--muted); max-width: 58ch; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .step { border-top: 2px solid var(--ink); padding-top: 15px; }
+    .number { display: block; color: var(--muted); font-size: .8rem; margin-bottom: 18px; }
+    .step h3 { margin-bottom: 10px; }
+    .step p { font-size: .94rem; color: var(--muted); }
+    .editorial { background: var(--soft); border-block: 1px solid var(--line); }
+    .story {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 45px;
+      align-items: center;
+    }
+    .story img { aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius); }
+    .story h2 { margin-bottom: 20px; max-width: 17ch; }
+    .story p { color: var(--muted); }
+    .checks { list-style: none; padding: 0; margin: 24px 0; }
+    .checks li { position: relative; padding: 11px 0 11px 25px; border-bottom: 1px solid #cbd4cf; }
+    .checks li::before { content: "✓"; position: absolute; left: 0; font-weight: 800; }
+    .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .article {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+    }
+    .article h3 { margin-bottom: 15px; }
+    .article p, .article li { color: var(--muted); font-size: .92rem; }
+    .article ul { padding-left: 19px; margin-block: 18px 0; }
+    .article li + li { margin-top: 9px; }
+    .article .eyebrow { color: #647267; }
+    .table-area { overflow-x: auto; margin-top: 28px; }
+    table { border-collapse: collapse; width: 100%; text-align: left; font-size: .94rem; }
+    caption { text-align: left; color: var(--muted); padding-bottom: 15px; }
+    th, td { padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    thead { background: var(--ink); color: var(--white); }
+    tbody th { width: 24%; }
+    .faq-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: 50px; }
+    .faq-layout > div > p { margin-top: 20px; color: var(--muted); }
+    details { border-bottom: 1px solid var(--line); padding-block: 18px; }
+    details:first-child { border-top: 1px solid var(--line); }
+    summary { cursor: pointer; font-weight: 750; padding-right: 8px; }
+    details p { margin-top: 12px; color: var(--muted); font-size: .95rem; }
+    .closing {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      margin-bottom: 55px;
+    }
+    .closing h2 { font-size: 1.8rem; }
+    .closing p { color: #d2dce3; margin-top: 10px; max-width: 62ch; }
+    .closing .button { background: var(--yellow); color: var(--ink); flex-shrink: 0; }
+    footer { border-top: 1px solid var(--line); padding-block: 28px; color: var(--muted); font-size: .8rem; }
+    footer p { max-width: 100ch; }
+    @media (min-width: 900px) {
+      .deferred { content-visibility: auto; contain-intrinsic-size: auto 650px; }
+    }
+    @media (max-width: 900px) {
+      .categories { grid-template-columns: repeat(3, 1fr); }
+      .hero { gap: 25px; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+      .articles { grid-template-columns: 1fr; }
+      .story { gap: 28px; }
+      .faq-layout { grid-template-columns: 1fr; gap: 25px; }
+      .closing { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: calc(100% - 30px); }
+      .topbar-inner { min-height: 65px; }
+      .topbar small { font-size: .7rem; max-width: 120px; text-align: right; }
+      .category-heading { display: block; }
+      .category-heading span { display: block; margin-top: 4px; }
+      .categories { grid-template-columns: repeat(2, 1fr); }
+      .categories a { font-size: .79rem; }
+      .hero, .story, .section-head, .answer { grid-template-columns: 1fr; }
+      .hero { padding-block: 35px; gap: 30px; }
+      .hero img { aspect-ratio: 5 / 4; }
+      .hero .intro { font-size: 1rem; }
+      .answer { gap: 14px; padding: 24px; }
+      .section { padding-block: 40px; }
+      .section-head { gap: 17px; }
+      .steps { gap: 24px 17px; }
+      .step h3 { font-size: 1.1rem; }
+      .story img { aspect-ratio: 4 / 3; }
+      .article { padding: 23px; }
+      .closing { padding: 25px; margin-bottom: 40px; }
+      th, td { padding: 12px; }
+      table { min-width: 550px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "#webpage",
+        "name": "OrientDig spreadsheet – svensk guide till fynd, storlekar och QC",
+        "description": "En oberoende svensk guide till kategorier, produktlänkar, passform och granskning av QC-bilder.",
+        "inLanguage": "sv",
+        "about": [
+          {"@type": "Thing", "name": "OrientDig spreadsheet"},
+          {"@type": "Thing", "name": "Storleksguide för sneakers"},
+          {"@type": "Thing", "name": "Granskning av QC-bilder"}
+        ],
+        "hasPart": [
+          {"@id": "#artikel-passform"},
+          {"@id": "#artikel-qc"},
+          {"@id": "#artikel-kostnad"},
+          {"@id": "#vanliga-fragor"}
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "#artikel-passform",
+        "headline": "Storleksguide för sneakers och kläder",
+        "inLanguage": "sv",
+        "articleBody": "Utgå från mått på något du redan använder. Fotlängd i centimeter ger ett bättre jämförelseunderlag än en ensam storleksbeteckning. För sneakers: jämför fotlängd, innermått och utrymme vid tårna. För hoodie: kontrollera bröstvidd, plagglängd och axelbredd. För T-shirt: granska ärmlängd och hur måtten har tagits. För byxor: anteckna midjemått, innerbenslängd och benöppning."
+      },
+      {
+        "@type": "Article",
+        "@id": "#artikel-qc",
+        "headline": "OrientDig QC-bilder: läs det som faktiskt syns",
+        "inLanguage": "sv",
+        "articleBody": "QC står för kvalitetskontroll. Fotografier kan hjälpa dig att granska synliga detaljer, men de fastställer inte äkthet, materialinnehåll eller hur länge en vara håller. För skor: titta på sömmar, hälform och sulans linjering. För jackor: be om bilder av foder, dragkedja och ärmslut. För huvudbonader: kontrollera omkrets och justering. För smycken och accessoarer: jämför storlek, lås och infästningar."
+      },
+      {
+        "@type": "Article",
+        "@id": "#artikel-kostnad",
+        "headline": "Planera kostnaden innan du bestämmer dig",
+        "inLanguage": "sv",
+        "articleBody": "En prislapp är bara en del av beslutsunderlaget. Skriv upp varans pris separat från andra kostnader och använd aktuella uppgifter för ditt leveransland. Vid prisjämförelse: använd samma variant, antal och valuta. För fraktunderlag: kontrollera packad vikt och paketmått. För total kostnad: undersök serviceavgifter och eventuella skatter. För returfrågor: läs villkor och tidsgränser före betalning."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "#vanliga-fragor",
+        "inLanguage": "sv",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Vad är en OrientDig spreadsheet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Det är en sammanställning av produktlänkar och jämförelseuppgifter för den som undersöker köp via OrientDig. Använd listan för att hitta alternativ och kontrollera sedan den aktuella produktinformationen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Är detta en officiell OrientDig-sida?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Detta är en oberoende svensk guide utan officiell koppling till OrientDig eller de varumärken som visas. Kategorilänkarna leder till Cafans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kan QC-bilder bevisa att en produkt är äkta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nej. Bilder kan visa exempelvis sömmar, form, färg och synliga märkningar. De räcker inte för att fastställa äkthet, materialinnehåll eller hållbarhet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Hur väljer jag rätt storlek?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jämför produktens mått i centimeter med ett plagg eller ett par skor som passar dig. Kontrollera mätmetod och vald variant; samma storleksbeteckning kan motsvara olika mått."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ingår frakt i ett angivet produktpris?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Utgå inte från det. Kontrollera vad produktpriset omfattar och begär aktuella uppgifter om frakt, avgifter och eventuella skatter för din beställning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vart leder länkarna på den här sidan?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kategoriknapparna öppnar motsvarande kategori på cafans.com. Övriga länkar öppnar startsidan på www.cafans.com. Sidan har ingen egen kassa."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/gumxx/">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="https://www.cafans.com" aria-label="Cafans startsida">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        CAFANS / URVAL
+      </a>
+      <small>Oberoende guide · På svenska</small>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-section" aria-labelledby="category-title">
+      <div class="wrap">
+        <div class="category-heading">
+          <h2 id="category-title">Börja med en kategori</h2>
+          <span>Öppnar motsvarande kategori på Cafans</span>
+        </div>
+        <nav class="categories" aria-label="Produktkategorier">
+          <a href="https://cafans.com/category-911-Shoes.html">Skor</a>
+          <a href="https://cafans.com/category-912-Hoodies%2FSweaters.html">Hoodies &amp; tröjor</a>
+          <a href="https://cafans.com/category-913-T-Shirts.html">T-shirts</a>
+          <a href="https://cafans.com/category-914-Jackets.html">Jackor</a>
+          <a href="https://cafans.com/category-915-Pants%2FShorts.html">Byxor &amp; shorts</a>
+          <a href="https://cafans.com/category-916-Headwear.html">Huvudbonader</a>
+          <a href="https://cafans.com/category-917-Sets.html">Matchande set</a>
+          <a href="https://cafans.com/category-918-underwear%2Funderpants.html">Underkläder</a>
+          <a href="https://cafans.com/category-919-Jersey.html">Matchtröjor</a>
+          <a href="https://cafans.com/category-920-Accessories.html">Accessoarer</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="wrap hero" aria-labelledby="hero-title">
+      <div>
+        <span class="eyebrow">Färre gissningar. Tydligare val.</span>
+        <h1 id="hero-title">
+          OrientDig spreadsheet
+          <span>Hitta din stil.<br>Granska detaljerna.</span>
+        </h1>
+        <p class="intro">
+          En användbar produktlista hjälper dig att jämföra, inte bara att klicka.
+          Börja med kategorin, välj några alternativ och kontrollera mått,
+          bilder och den exakta varianten innan du går vidare.
+        </p>
+        <a class="button" href="https://www.cafans.com">Utforska Cafans <span aria-hidden="true">↗</span></a>
+        <p class="hero-note">Svensk läsguide. Ingen egen kassa eller verifiering av produkter.</p>
+      </div>
+      <figure>
+        <span class="image-label">Form · färg · passform</span>
+        <img
+          src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
+          srcset="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=480&amp;q=75 480w,
+                  https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=760&amp;q=78 760w,
+                  https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&amp;fit=crop&amp;w=1000&amp;q=80 1000w"
+          sizes="(max-width: 600px) calc(100vw - 30px), (max-width: 1220px) 44vw, 520px"
+          width="1000"
+          height="800"
+          alt="Röd Nike-sneaker med ljus swoosh mot röd bakgrund"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async">
+        <figcaption>Stilinspiration med Nike. Bilden visar ingen verifierad produktannons eller lagerstatus.</figcaption>
+      </figure>
+    </section>
+
+    <section class="wrap answer" aria-labelledby="definition-title">
+      <h2 id="definition-title">Vad är en sådan lista?</h2>
+      <p>
+        En <strong>OrientDig spreadsheet</strong> är en sammanställning av produktlänkar
+        och jämförelseuppgifter för den som undersöker köp via OrientDig.
+        En bra anteckning beskriver källa, variant, mått och vad som återstår att kontrollera.
+        Den ersätter inte produktens aktuella information.
+      </p>
+    </section>
+
+    <section class="wrap section" aria-labelledby="workflow-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Från inspiration till kortlista</span>
+          <h2 id="workflow-title">Fyra steg som gör urvalet enklare</h2>
+        </div>
+        <p>
+          När du letar efter OrientDig-fynd är en kort lista med tydliga anteckningar
+          lättare att använda än många sparade länkar utan sammanhang.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="number">01 / BEHOV</span>
+          <h3>Bestäm vad som saknas</h3>
+          <p>Välj kategori, användning och önskad passform. En vardagssko och en träningssko behöver bedömas utifrån olika behov.</p>
+        </div>
+        <div class="step">
+          <span class="number">02 / KÄLLA</span>
+          <h3>Öppna produktlänken</h3>
+          <p>Kontrollera att länken fortfarande visar rätt modell. Spara artikeluppgifter, säljare och datum för din kontroll.</p>
+        </div>
+        <div class="step">
+          <span class="number">03 / VARIANT</span>
+          <h3>Jämför samma utförande</h3>
+          <p>Färg, storlek och materialbeskrivning ska höra till samma variant. Bilder från en annan variant kan vilseleda.</p>
+        </div>
+        <div class="step">
+          <span class="number">04 / BESLUT</span>
+          <h3>Notera det som saknas</h3>
+          <p>En okänd vikt eller saknad måttbild är en fråga att följa upp. Fyll inte luckorna med antaganden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="editorial deferred" aria-labelledby="style-title">
+      <div class="wrap section story">
+        <figure>
+          <img
+            src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&amp;fit=crop&amp;w=800&amp;q=78"
+            width="800"
+            height="800"
+            alt="Närbild av Nike-sneakers i ljusa beige och bruna toner"
+            loading="lazy"
+            decoding="async">
+          <figcaption>En neutral färgpalett som inspirationsreferens. Jämför alltid med bilder av den valda varan.</figcaption>
+        </figure>
+        <div>
+          <span class="eyebrow">Tema / en garderob som hänger ihop</span>
+          <h2 id="style-title">Låt en detalj hålla ihop helheten</h2>
+          <p>
+            Börja med sneakersens färg och välj sedan en lugn bas i överdelen.
+            En keps eller en mindre accessoar kan återknyta till samma ton.
+            Det gör det lättare att bedöma vilka plagg som faktiskt passar ihop.
+          </p>
+          <ul class="checks">
+            <li><strong>Skor:</strong> jämför silhuett, sulprofil och utrymme i tåpartiet.</li>
+            <li><strong>Kläder:</strong> se hur längd, axel och vidd samspelar.</li>
+            <li><strong>Huvudbonader:</strong> kontrollera omkrets, kronhöjd och justering.</li>
+            <li><strong>Smycken:</strong> bedöm skala, längd och hur låset fungerar.</li>
+          </ul>
+          <p>
+            Om du söker efter Nike, Louis Vuitton, Gucci, Hermès eller Dior:
+            håll isär stilinspiration och produktuppgifter. Ett varumärkesnamn
+            eller en bild är inte ett äkthetsintyg.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section deferred" aria-labelledby="guides-title">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Tre korta artiklar</span>
+          <h2 id="guides-title">Läs innan du väljer</h2>
+        </div>
+        <p>
+          Passform, bildunderlag och kostnad svarar på olika frågor.
+          Använd varje guide för att fylla en konkret lucka i din jämförelse.
+        </p>
+      </div>
+      <div class="articles">
+        <article class="article" id="artikel-passform" aria-labelledby="fit-title">
+          <span class="eyebrow">Guide 01 / mått</span>
+          <h3 id="fit-title">Storleksguide för sneakers och kläder</h3>
+          <p>
+            Utgå från mått på något du redan använder. Fotlängd i centimeter ger
+            ett bättre jämförelseunderlag än en ensam storleksbeteckning.
+          </p>
+          <ul>
+            <li><strong>För sneakers:</strong> jämför fotlängd, innermått och utrymme vid tårna.</li>
+            <li><strong>För hoodie:</strong> kontrollera bröstvidd, plagglängd och axelbredd.</li>
+            <li><strong>För T-shirt:</strong> granska ärmlängd och hur måtten har tagits.</li>
+            <li><strong>För byxor:</strong> anteckna midjemått, innerbenslängd och benöppning.</li>
+          </ul>
+        </article>
+
+        <article class="article" id="artikel-qc" aria-labelledby="qc-title">
+          <span class="eyebrow">Guide 02 / bilder</span>
+          <h3 id="qc-title">OrientDig QC-bilder: läs det som faktiskt syns</h3>
+          <p>
+            QC står för kvalitetskontroll. Fotografier kan hjälpa dig att granska
+            synliga detaljer, men de fastställer inte äkthet, materialinnehåll
+            eller hur länge en vara håller.
+          </p>
+          <ul>
+            <li><strong>För skor:</strong> titta på sömmar, hälform och sulans linjering.</li>
+            <li><strong>För jackor:</strong> be om bilder av foder, dragkedja och ärmslut.</li>
+            <li><strong>För huvudbonader:</strong> kontrollera omkrets och justering.</li>
+            <li><strong>För smycken och accessoarer:</strong> jämför storlek, lås och infästningar.</li>
+          </ul>
+        </article>
+
+        <article class="article" id="artikel-kostnad" aria-labelledby="cost-title">
+          <span class="eyebrow">Guide 03 / budget</span>
+          <h3 id="cost-title">Planera kostnaden innan du bestämmer dig</h3>
+          <p>
+            En prislapp är bara en del av beslutsunderlaget. Skriv upp varans pris
+            separat från andra kostnader och använd aktuella uppgifter för ditt leveransland.
+          </p>
+          <ul>
+            <li><strong>Vid prisjämförelse:</strong> använd samma variant, antal och valuta.</li>
+            <li><strong>För fraktunderlag:</strong> kontrollera packad vikt och paketmått.</li>
+            <li><strong>För total kostnad:</strong> undersök serviceavgifter och eventuella skatter.</li>
+            <li><strong>För returfrågor:</strong> läs villkor och tidsgränser före betalning.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="editorial deferred" aria-labelledby="comparison-title">
+      <div class="wrap section">
+        <span class="eyebrow">Guide till produktlänkar</span>
+        <h2 id="comparison-title">Vad bör finnas i din egen jämförelse?</h2>
+        <div class="table-area">
+          <table>
+            <caption>En enkel arbetsmall för att jämföra produkter utan att tappa bort viktiga detaljer.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Uppgift</th>
+                <th scope="col">Vad du antecknar</th>
+                <th scope="col">Vad det hjälper dig med</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Källa och länk</th>
+                <td>Produktadress, artikelnummer, säljare och kontrolldatum.</td>
+                <td>Återfinna rätt vara och upptäcka en ändrad eller trasig länk.</td>
+              </tr>
+              <tr>
+                <th scope="row">Exakt variant</th>
+                <td>Modell, färgbeteckning, storlek och antal.</td>
+                <td>Jämföra likvärdiga alternativ i stället för olika utföranden.</td>
+              </tr>
+              <tr>
+                <th scope="row">Passform</th>
+                <td>Mått i centimeter, mätmetod och eget referensmått.</td>
+                <td>Bedöma storlek på ett tydligare underlag.</td>
+              </tr>
+              <tr>
+                <th scope="row">Bildunderlag</th>
+                <td>Framifrån, bakifrån, detaljbilder och eventuell bild med måttband.</td>
+                <td>Se vilka vinklar eller detaljer som fortfarande saknas.</td>
+              </tr>
+              <tr>
+                <th scope="row">Kostnadsunderlag</th>
+                <td>Prisets valuta, fraktuppgifter, avgifter och uppskattningens datum.</td>
+                <td>Hålla isär bekräftade belopp och preliminära beräkningar.</td>
+              </tr>
+              <tr>
+                <th scope="row">Öppna frågor</th>
+                <td>Obekräftat material, saknade mått eller otydliga villkor.</td>
+                <td>Veta vad du behöver fråga om innan du fattar beslut.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section faq-layout deferred" aria-labelledby="faq-title">
+      <div>
+        <span class="eyebrow">Frågor &amp; svar</span>
+        <h2 id="faq-title">Tydliga svar före nästa klick</h2>
+        <p>
+          Använd denna OrientDig spreadsheet-guide som ett stöd för egna kontroller.
+          Produktspecifika besked behöver komma från den aktuella annonsen eller tjänsten.
+        </p>
+      </div>
+      <div id="vanliga-fragor">
+        <details open>
+          <summary>Vad är en OrientDig spreadsheet?</summary>
+          <p>Det är en sammanställning av produktlänkar och jämförelseuppgifter för den som undersöker köp via OrientDig. Använd listan för att hitta alternativ och kontrollera sedan den aktuella produktinformationen.</p>
+        </details>
+        <details>
+          <summary>Är detta en officiell OrientDig-sida?</summary>
+          <p>Nej. Detta är en oberoende svensk guide utan officiell koppling till OrientDig eller de varumärken som visas. Kategorilänkarna leder till Cafans.</p>
+        </details>
+        <details>
+          <summary>Kan QC-bilder bevisa att en produkt är äkta?</summary>
+          <p>Nej. Bilder kan visa exempelvis sömmar, form, färg och synliga märkningar. De räcker inte för att fastställa äkthet, materialinnehåll eller hållbarhet.</p>
+        </details>
+        <details>
+          <summary>Hur väljer jag rätt storlek?</summary>
+          <p>Jämför produktens mått i centimeter med ett plagg eller ett par skor som passar dig. Kontrollera mätmetod och vald variant; samma storleksbeteckning kan motsvara olika mått.</p>
+        </details>
+        <details>
+          <summary>Ingår frakt i ett angivet produktpris?</summary>
+          <p>Utgå inte från det. Kontrollera vad produktpriset omfattar och begär aktuella uppgifter om frakt, avgifter och eventuella skatter för din beställning.</p>
+        </details>
+        <details>
+          <summary>Vart leder länkarna på den här sidan?</summary>
+          <p>Kategoriknapparna öppnar motsvarande kategori på cafans.com. Övriga länkar öppnar startsidan på www.cafans.com. Sidan har ingen egen kassa.</p>
+        </details>
+      </div>
+    </section>
+
+    <div class="wrap closing">
+      <div>
+        <h2>Välj kategori. Spara färre, bättre alternativ.</h2>
+        <p>Börja med det du behöver och låt mått, bilder och tydliga uppgifter styra nästa steg.</p>
+      </div>
+      <a class="button" href="https://www.cafans.com">Fortsätt till Cafans <span aria-hidden="true">↗</span></a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>
+        <strong>CAFANS / URVAL</strong> · Oberoende information på svenska.
+        Varumärken tillhör sina respektive ägare. Inspirationsbilderna innebär ingen
+        officiell koppling, produktverifiering eller utfästelse om tillgänglighet.
+        Kontrollera alltid aktuell information innan du beställer.
+      </p>
+      <p><a href="https://www.cafans.com">Besök Cafans</a></p>
+    </div>
+  </footer>
+</body>
+</html>
